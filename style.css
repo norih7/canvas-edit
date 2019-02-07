@@ -1,1 +1,468 @@
-* {	margin:0;	padding:0;	font-size:1em;}@font-face {  font-family: 'nukamiso';  src: url('./fonts/nukamiso__beta08.woff') format('woff');}ul {	list-style:none;}canvas {	-webkit-tap-highlight-color:rgba(0,0,0,0);}	body {	height:800px;	 -webkit-text-size-adjust: none;	 font-family:"ヒラギノ角ゴ W3";}	#wrapper {	min-width:560px;	max-width:600px;	margin:0 auto;	padding:0 10px 30px 10px;	position:relative;	background:url(./img/noize.png) ,  -moz-linear-gradient(#444, #555);	background:url(./img/noize.png) ,   -webkit-gradient(linear, left top, left bottom, from(#444), to(#555));}	#mainedit ul {	margin:0 0 10px 0px;	list-style:none;}	#mainedit li {	width:140px;	margin-right:15px;	float:left;}#mainedit li h3 , #stamp dt{	margin-bottom:0px;	padding:8px 10px;	background:url(./img/noize.png) #c3b687;	-moz-border-radius:0px 0px 0 0;	font-size:0.9em;	font-style:normal;	font-family:"nukamiso";	color:#6e6441;}#mainedit li button , #mainedit li input , #stamp button , #stamp input {	padding:3px 6px;	border:1px solid #aaa;}#load {	margin-bottom:15px;}#load h2 {	width:80px;	height:40px;	background:url(./img/noize.png) #c38793;	-moz-border-radius:0 0 0px 10px;	text-align:center;	font-size:1.3em;	color:#77424d;}#load div {	width:230px;	height:20px;	margin:-40px 0 0 80px ;	padding:6px 15px 14px 25px;	background:rgba(255,255,255,0.8);	-moz-border-radius:0 0 10px 0;}#load  input {	border:1px solid #aaa;}#container {	display:-moz-box;	display:-webkit-box;}#stamp {	width:140px;	height:145px;	margin-left:10px;}#stamp h3 {	font-size:1em;	text-align:center;}#stamp ul {	border-left:1px solid #ccc;	border-right:1px solid #ccc;	border-bottom:1px solid #ccc;}#stamp dd {	margin-bottom:20px;	padding:10px 5px;	background:rgba(255,255,255,0.8);}#stamp li button:hover {	background:#eee;}#canvas_edit {	width:560px;	height:560px;	margin:0 auto;	background:#fff;	-moz-box-shadow:0 0 3px 3px rgba(0,0,0,0.1);}/*----*/section{        display: block;} .accordion {	height:60px;	margin:0 0 30px 0;	position:relative;}.accordion:after {}#l {	background: url(./img/camera.png) no-repeat 18px 0,  -moz-linear-gradient(#f2f2f2, #ddd);	background: url(./img/camera.png) no-repeat 18px 0,  -webkit-linear-gradient(#f2f2f2, #ddd);	}#one {	background: url(./img/pm.png) no-repeat 15px 0,  -moz-linear-gradient(#f2f2f2, #ddd);	background: url(./img/pm.png) no-repeat 15px 0,  -webkit-linear-gradient(#f2f2f2, #ddd);	}#two {	background: url(./img/text.png) no-repeat 20px 5px,  -moz-linear-gradient(#f2f2f2, #ddd);	background: url(./img/text.png) no-repeat 20px 5px,  -webkit-linear-gradient(#f2f2f2, #ddd);}#three {	background: url(./img/stamp.png) no-repeat 20px 0px,  -moz-linear-gradient(#f2f2f2, #ddd);	background: url(./img/stamp.png) no-repeat 20px 0px,  -webkit-linear-gradient(#f2f2f2, #ddd);}.accordion section{	width:80px;	border-left:1px solid #aaa;	border-bottom:1px solid #aaa;	margin:0 0px 0 0;	float:left;}.accordion section:first-child {	-moz-border-radius:0 0 0 8px;	-webkit-border-radius:0 0 0 8px;}.accordion section:last-child {	border-right:1px solid #aaa;	-moz-border-radius:0 0 8px 0;	-webkit-border-radius:0 0 8px 0;}.accordion h2 {}.accordion h2 a:hover {	opacity:0.6;}.accordion p{        padding: 10px;}.accordion button {	display:block;	width:100%;	height:35px;	padding:0px 6px;	margin-bottom:10px;	border-style:none;	-moz-border-radius:8px;	border:1px solid #aaa;	font-size:1.3em;	font-weight:bold;	color:#000;}.accordion button:hover {	opacity:0.6;}.accordion h2 a{        display: block;        position: relative;        height:60px;		line-height:85px;		padding:0px;        color: #333;        text-decoration: none;		text-align:center;}.accordion h2 + div{		position:absolute;		min-width:160px;        height: 0;		margin-left:-1px;        overflow: hidden;        -moz-transition: height 0.5s ease-out ;        -webkit-transition: height 0.3s ease-in-out;        -o-transition: height 0.3s ease-in-out;}.accordion h2 + div strong {	display:block;	height:20px;	content:"";	padding:5px 20px;	background:#935b66;	font-weight:normal;}.accordion h2 + div strong span {	font-size:1.6em;	font-family:"nukamiso";}.accordion h2 + div a:link , .accordion h2 + div a:visited {	color:#eee;}.accordion h2 + div a {	text-decoration:none;}.accordion h2 + div strong:after{    content: '';        position: absolute;        left: 30px;        top:10px;        border-bottom: 10px solid #935b66;        border-left: 10px solid transparent;        border-right: 10px solid transparent;}.accordion :target h2 a:after{    content: '';        position: absolute;        right: 10px;        top: 50%;        margin-top: -3px;        border-top: 5px solid #333;        border-left: 5px solid transparent;        border-right: 5px solid transparent;}.accordion :target h2 + div{		top:40px;        height: 180px;		padding-top:20px;		}.accordion :target h2 + div div {	min-height:80px;	padding:10px;	background:rgba(255,255,255,0.9);}/*----------------------------------------------------*/#accordion {	width:559px;	height:70px;	margin:0 auto 20px auto;}#accordion li {	float:left;	width:93px;	position:relative;}#accordion li:first-child {}#accordion h2{	border-left:1px solid #aaa;	-moz-box-shadow:1px 0 0px 0px rgba(255,255,255,0.8) inset;    height:69px;	margin-bottom:10px;	line-height:98px;	padding:0px;    color: #333;	text-align:center;	font-size:1.1em;	}#accordion h2:hover {	opacity:0.7;}#accordion li:first-child h2 {	border:none;	-moz-border-radius:0 0 0 8px;	-webkit-border-radius:0 0 0 8px;}#accordion li:last-child h2 {	-moz-border-radius:0 0 8px 0;	-webkit-border-radius:0 0 8px 0;}#accordion li div {	position:absolute;	min-width:140px;	min-height:50px;	padding:10px;	background:url(./img/noize.png) , rgba(215,194,177,0.9);	-moz-border-radius:3px;	-webkit-border-radius:3px;}#accordion li div p {	padding:10px;	border:1px dashed #76685d;	-moz-border-radius:3px;	-webkit-border-radius:3px;}.fileinputs {  	width:150px;}form#upload {}            .fileinputs input { 	position:relative;	opacity:0;	z-index:2;}  .fileinputs button {	margin-top:-30px;}  #accordion li div div {	border:none;	background:none;	padding:0;}#accordion li div div:after{	border:none;}/*#accordion li div:after{    content: '';        position: absolute;        left: 38px;        top:-18px;        border-bottom: 10px solid #453b34;        border-left: 10px solid transparent;        border-right: 10px solid transparent;}*/.b_shot {	background: url(./img/i_camera.png) no-repeat center 3px , url(./img/noize.png) ,  -moz-linear-gradient(#eee, #ccc);	background: url(./img/i_camera.png) no-repeat center 3px,  -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));	}.b_scale {	background: url(./img/i_scale.png) no-repeat center 5px,  -moz-linear-gradient(#eee, #ccc);	background: url(./img/i_scale.png) no-repeat center 5px,  -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));	}.b_comment {	background: url(./img/i_comment.png) no-repeat center 10px,  -moz-linear-gradient(#eee, #ccc);	background: url(./img/i_comment.png) no-repeat center 10px,   -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));}.b_stamp {	background: url(./img/i_stamp.png) no-repeat center 5px,  -moz-linear-gradient(#eee, #ccc);	background: url(./img/i_stamp.png) no-repeat center 5px,   -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));}.b_frame {	background:url(./img/i_frame.png) no-repeat center 3px ,  -moz-linear-gradient(#eee, #ccc);	background:url(./img/i_frame.png) no-repeat center 3px ,   -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));}.b_edit {	background: -moz-linear-gradient(#eee, #ccc);	background: -webkit-linear-gradient(#eee, #ccc);}#accordion button {	display:block;	width:100%;	height:35px;	padding:0px 6px;	margin-bottom:10px;	border-style:none;	-moz-border-radius:15px;	-webkit-border-radius:15px;	border:1px solid #aaa;	-moz-box-shadow:0 0 0px 1px rgba(255,255,255,0.5) inset;	-webkit-box-shadow:0 0 0px 1px rgba(255,255,255,0.5) inset;	background: url(./img/noize.png) ,  -moz-linear-gradient(#eee, #ccc);	background: url(./img/noize.png) ,-webkit-linear-gradient(#eee, #ccc);	font-size:1.1em;	font-weight:bold;	color:#444;}#accordion button:hover {	opacity:0.8;}
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+}
+
+@font-face {
+  font-family: "nukamiso";
+  src: url("./fonts/nukamiso__beta08.woff") format("woff");
+}
+
+ul {
+  list-style: none;
+}
+
+canvas {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  height: 800px;
+
+  -webkit-text-size-adjust: none;
+  font-family: "ヒラギノ角ゴ W3";
+}
+
+#wrapper {
+  min-width: 560px;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 10px 30px 10px;
+  position: relative;
+  background: url(./img/noize.png), -moz-linear-gradient(#444, #555);
+  background: url(./img/noize.png),
+    -webkit-gradient(linear, left top, left bottom, from(#444), to(#555));
+}
+
+#mainedit ul {
+  margin: 0 0 10px 0px;
+  list-style: none;
+}
+
+#mainedit li {
+  width: 140px;
+  margin-right: 15px;
+  float: left;
+}
+
+#mainedit li h3,
+#stamp dt {
+  margin-bottom: 0px;
+  padding: 8px 10px;
+  background: url(./img/noize.png) #c3b687;
+  -moz-border-radius: 0px 0px 0 0;
+  font-size: 0.9em;
+  font-style: normal;
+  font-family: "nukamiso";
+  color: #6e6441;
+}
+
+#mainedit li button,
+#mainedit li input,
+#stamp button,
+#stamp input {
+  padding: 3px 6px;
+  border: 1px solid #aaa;
+}
+
+#load {
+  margin-bottom: 15px;
+}
+
+#load h2 {
+  width: 80px;
+  height: 40px;
+  background: url(./img/noize.png) #c38793;
+  -moz-border-radius: 0 0 0px 10px;
+  text-align: center;
+  font-size: 1.3em;
+  color: #77424d;
+}
+
+#load div {
+  width: 230px;
+  height: 20px;
+  margin: -40px 0 0 80px;
+  padding: 6px 15px 14px 25px;
+  background: rgba(255, 255, 255, 0.8);
+  -moz-border-radius: 0 0 10px 0;
+}
+
+#load input {
+  border: 1px solid #aaa;
+}
+
+#container {
+  display: -moz-box;
+  display: -webkit-box;
+}
+
+#stamp {
+  width: 140px;
+  height: 145px;
+  margin-left: 10px;
+}
+
+#stamp h3 {
+  font-size: 1em;
+  text-align: center;
+}
+
+#stamp ul {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+#stamp dd {
+  margin-bottom: 20px;
+  padding: 10px 5px;
+  background: rgba(255, 255, 255, 0.8);
+}
+#stamp li button:hover {
+  background: #eee;
+}
+
+#canvas_edit {
+  width: 560px;
+  height: 560px;
+  margin: 0 auto;
+  background: #fff;
+  -moz-box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.1);
+}
+
+/*----*/
+section {
+  display: block;
+}
+
+.accordion {
+  height: 60px;
+  margin: 0 0 30px 0;
+  position: relative;
+}
+
+.accordion:after {
+}
+
+#l {
+  background: url(./img/camera.png) no-repeat 18px 0,
+    -moz-linear-gradient(#f2f2f2, #ddd);
+  background: url(./img/camera.png) no-repeat 18px 0,
+    -webkit-linear-gradient(#f2f2f2, #ddd);
+}
+
+#one {
+  background: url(./img/pm.png) no-repeat 15px 0,
+    -moz-linear-gradient(#f2f2f2, #ddd);
+  background: url(./img/pm.png) no-repeat 15px 0,
+    -webkit-linear-gradient(#f2f2f2, #ddd);
+}
+
+#two {
+  background: url(./img/text.png) no-repeat 20px 5px,
+    -moz-linear-gradient(#f2f2f2, #ddd);
+  background: url(./img/text.png) no-repeat 20px 5px,
+    -webkit-linear-gradient(#f2f2f2, #ddd);
+}
+
+#three {
+  background: url(./img/stamp.png) no-repeat 20px 0px,
+    -moz-linear-gradient(#f2f2f2, #ddd);
+  background: url(./img/stamp.png) no-repeat 20px 0px,
+    -webkit-linear-gradient(#f2f2f2, #ddd);
+}
+
+.accordion section {
+  width: 80px;
+  border-left: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+
+  margin: 0 0px 0 0;
+  float: left;
+}
+
+.accordion section:first-child {
+  -moz-border-radius: 0 0 0 8px;
+  -webkit-border-radius: 0 0 0 8px;
+}
+
+.accordion section:last-child {
+  border-right: 1px solid #aaa;
+  -moz-border-radius: 0 0 8px 0;
+  -webkit-border-radius: 0 0 8px 0;
+}
+
+.accordion h2 {
+}
+
+.accordion h2 a:hover {
+  opacity: 0.6;
+}
+
+.accordion p {
+  padding: 10px;
+}
+
+.accordion button {
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 0px 6px;
+  margin-bottom: 10px;
+  border-style: none;
+  -moz-border-radius: 8px;
+  border: 1px solid #aaa;
+  font-size: 1.3em;
+  font-weight: bold;
+  color: #000;
+}
+
+.accordion button:hover {
+  opacity: 0.6;
+}
+
+.accordion h2 a {
+  display: block;
+  position: relative;
+  height: 60px;
+  line-height: 85px;
+  padding: 0px;
+  color: #333;
+  text-decoration: none;
+  text-align: center;
+}
+
+.accordion h2 + div {
+  position: absolute;
+  min-width: 160px;
+  height: 0;
+  margin-left: -1px;
+  overflow: hidden;
+  -moz-transition: height 0.5s ease-out;
+  -webkit-transition: height 0.3s ease-in-out;
+  -o-transition: height 0.3s ease-in-out;
+}
+
+.accordion h2 + div strong {
+  display: block;
+  height: 20px;
+  content: "";
+  padding: 5px 20px;
+  background: #935b66;
+  font-weight: normal;
+}
+
+.accordion h2 + div strong span {
+  font-size: 1.6em;
+  font-family: "nukamiso";
+}
+
+.accordion h2 + div a:link,
+.accordion h2 + div a:visited {
+  color: #eee;
+}
+
+.accordion h2 + div a {
+  text-decoration: none;
+}
+
+.accordion h2 + div strong:after {
+  content: "";
+  position: absolute;
+  left: 30px;
+  top: 10px;
+  border-bottom: 10px solid #935b66;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+}
+
+.accordion :target h2 a:after {
+  content: "";
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  margin-top: -3px;
+  border-top: 5px solid #333;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+.accordion :target h2 + div {
+  top: 40px;
+  height: 180px;
+  padding-top: 20px;
+}
+
+.accordion :target h2 + div div {
+  min-height: 80px;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+/*----------------------------------------------------*/
+
+#accordion {
+  width: 559px;
+  height: 70px;
+  margin: 0 auto 20px auto;
+}
+
+#accordion li {
+  float: left;
+  width: 93px;
+  position: relative;
+}
+
+#accordion li:first-child {
+}
+
+#accordion h2 {
+  border-left: 1px solid #aaa;
+  -moz-box-shadow: 1px 0 0px 0px rgba(255, 255, 255, 0.8) inset;
+
+  height: 69px;
+  margin-bottom: 10px;
+  line-height: 98px;
+  padding: 0px;
+
+  color: #333;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+#accordion h2:hover {
+  opacity: 0.7;
+}
+
+#accordion li:first-child h2 {
+  border: none;
+  -moz-border-radius: 0 0 0 8px;
+  -webkit-border-radius: 0 0 0 8px;
+}
+
+#accordion li:last-child h2 {
+  -moz-border-radius: 0 0 8px 0;
+  -webkit-border-radius: 0 0 8px 0;
+}
+
+#accordion li div {
+  position: absolute;
+  min-width: 140px;
+  min-height: 50px;
+  padding: 10px;
+  background: url(./img/noize.png), rgba(215, 194, 177, 0.9);
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+#accordion li div p {
+  padding: 10px;
+  border: 1px dashed #76685d;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+}
+
+.fileinputs {
+  width: 150px;
+}
+
+form#upload {
+}
+
+.fileinputs input {
+  position: relative;
+  opacity: 0;
+  z-index: 2;
+}
+
+.fileinputs button {
+  margin-top: -30px;
+}
+
+#accordion li div div {
+  border: none;
+  background: none;
+  padding: 0;
+}
+
+#accordion li div div:after {
+  border: none;
+}
+
+/*
+#accordion li div:after
+{
+    content: '';
+        position: absolute;
+        left: 38px;
+        top:-18px;
+        border-bottom: 10px solid #453b34;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+}
+*/
+
+.b_shot {
+  background: url(./img/i_camera.png) no-repeat center 3px, url(./img/noize.png),
+    -moz-linear-gradient(#eee, #ccc);
+  background: url(./img/i_camera.png) no-repeat center 3px,
+    -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));
+}
+
+.b_scale {
+  background: url(./img/i_scale.png) no-repeat center 5px,
+    -moz-linear-gradient(#eee, #ccc);
+  background: url(./img/i_scale.png) no-repeat center 5px,
+    -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));
+}
+
+.b_comment {
+  background: url(./img/i_comment.png) no-repeat center 10px,
+    -moz-linear-gradient(#eee, #ccc);
+  background: url(./img/i_comment.png) no-repeat center 10px,
+    -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));
+}
+
+.b_stamp {
+  background: url(./img/i_stamp.png) no-repeat center 5px,
+    -moz-linear-gradient(#eee, #ccc);
+  background: url(./img/i_stamp.png) no-repeat center 5px,
+    -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));
+}
+
+.b_frame {
+  background: url(./img/i_frame.png) no-repeat center 3px,
+    -moz-linear-gradient(#eee, #ccc);
+  background: url(./img/i_frame.png) no-repeat center 3px,
+    -webkit-gradient(linear, left top, left bottom, from(#eee), to(#ccc));
+}
+
+.b_edit {
+  background: -moz-linear-gradient(#eee, #ccc);
+  background: -webkit-linear-gradient(#eee, #ccc);
+}
+
+#accordion button {
+  display: block;
+  width: 100%;
+  height: 35px;
+  padding: 0px 6px;
+  margin-bottom: 10px;
+  border-style: none;
+  -moz-border-radius: 15px;
+  -webkit-border-radius: 15px;
+  border: 1px solid #aaa;
+  -moz-box-shadow: 0 0 0px 1px rgba(255, 255, 255, 0.5) inset;
+  -webkit-box-shadow: 0 0 0px 1px rgba(255, 255, 255, 0.5) inset;
+  background: url(./img/noize.png), -moz-linear-gradient(#eee, #ccc);
+  background: url(./img/noize.png), -webkit-linear-gradient(#eee, #ccc);
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #444;
+}
+
+#accordion button:hover {
+  opacity: 0.8;
+}

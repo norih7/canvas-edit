@@ -1,1 +1,136 @@
-<!DOCTYPE html><html lang="ja"><head><!-- Import EaselJS Framework --><script type="text/javascript" src="./lib/easel.js"></script><script src="./src/easeljs/events/MouseEvent.js"></script><script src="./src/easeljs/geom/Point.js"></script><script src="./src/easeljs/display/DisplayObject.js"></script><script src="./src/easeljs/display/Container.js"></script><script src="./src/easeljs/display/Stage.js"></script><script src="./src/easeljs/display/Bitmap.js"></script><script src="./src/easeljs/utils/Ticker.js"></script><script src="./src/easeljs/display/Graphics.js"></script><script src="./src/easeljs/ui/Touch.js"></script><!-- End EaselJS Imports --><script type="text/javascript" src="./src/jqui/jquery-1.6.2.min.js"></script><script type="text/javascript" src="20111025.js"></script><link type="text/css" rel="stylesheet" href="./style.css"><!--jQuery UI--><link type="text/css" href="./src/jqui/jquery-ui-1.8.16.custom.css" rel="stylesheet" /><script type="text/javascript" src="./src/jqui/jquery-ui-1.8.16.custom.min.js"></script><!--jQuery UI--><meta charset="UTF-8"><meta name="viewport" content="width=device-width, user-scalable=no"><title>[title]</title></head><body  onload="init();hideAdBar();" onOrientationChange="hideAdBar()"><div id="wrapper"><nav id="accordion"><ul><li><h2 class="b_shot">Photos</h2><div><p class="fileinputs">  <input class="file" type="file" onchange="preview(this)"><button id="targetInput">ファイル選択</button></p></div></li><li><h2 class="b_scale">拡大縮小</h2><div><p><button id="btn">＋</button><button id="btn2">−</button></p></div></li><li><h2 class="b_comment">コメント</h2><div><p><input type="checkbox">吹き出し</input><input type="text" id="comstr" style="width:134px;border:1px solid #aaa;padding:3px;-moz-border-radius:3px;margin-bottom:10px;"></input><button id="text">書き込む</button><button id="del_text">消去</button></p></div></li><li><h2 class="b_stamp">スタンプ</h2><div><p><button id="ok">Good</button><button id="sogood">いいね</button><button id="del_stamp">消去</button></p></div></li><li><h2 class="b_frame">フレーム</h2><div><p><button id="frame_01">フレーム1</button><button id="frame_02">フレーム2</button></p></div></li><li><h2 class="b_edit">編集終了</h2><div><button id="post">投稿する</button></div></li></nav><!--<div class="accordion"><section id="l"><h2><a href="#l">写真撮影</a></h2><div><a href="#close"><strong><span>×</span></strong></a><div><form><input type="file" name="file" onchange="preview(this)"></form></div></div></section>	<section id="one"><h2><a href="#one">拡大縮小</a></h2><div><a href="#close"><strong><span>close</span></strong></a><div><button id="btn2">-</button> <button id="btn">+</button> </div></div></section><section id="two"><h2><a href="#two">コメント</a></h2><div><a href="#close"><strong><span>close</span></strong></a><div><input type="text" id="comstr" style="width:134px;border:1px solid #aaa;padding:3px;-moz-border-radius:3px;"></input><button id="text" style="margin-top:5px;-moz-border-radius:3px;">書き込む</button> <button id="del_text">消去</button></div></div></section><section id="three"><h2><a href="#three">スタンプ</a></h2><div><a href="#close"><strong><span>close</span></strong></a><div><button id="ok">Good</button> <button id="sogood">いいね</button> <button id="del_stamp">消去</button></div></div></section></div>--><div id="canvas_edit"><canvas id="canvas" width="560" height="560"></canvas></div></div></body></html>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Import EaselJS Framework -->
+<script type="text/javascript" src="./lib/easel.js"></script>
+<script src="./src/easeljs/events/MouseEvent.js"></script>
+<script src="./src/easeljs/geom/Point.js"></script>
+<script src="./src/easeljs/display/DisplayObject.js"></script>
+<script src="./src/easeljs/display/Container.js"></script>
+<script src="./src/easeljs/display/Stage.js"></script>
+<script src="./src/easeljs/display/Bitmap.js"></script>
+<script src="./src/easeljs/utils/Ticker.js"></script>
+<script src="./src/easeljs/display/Graphics.js"></script>
+<script src="./src/easeljs/ui/Touch.js"></script>
+<!-- End EaselJS Imports -->
+<script type="text/javascript" src="./src/jqui/jquery-1.6.2.min.js"></script>
+<script type="text/javascript" src="20111025.js"></script>
+
+<link type="text/css" rel="stylesheet" href="./style.css">
+<!--jQuery UI-->
+
+<link type="text/css" href="./src/jqui/jquery-ui-1.8.16.custom.css" rel="stylesheet" />
+<script type="text/javascript" src="./src/jqui/jquery-ui-1.8.16.custom.min.js"></script>
+
+<!--jQuery UI-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>[title]</title>
+</head>
+
+<body  onload="init();hideAdBar();" onOrientationChange="hideAdBar()">
+<div id="wrapper">
+<nav id="accordion">
+<ul>
+<li>
+<h2 class="b_shot">Photos</h2>
+<div>
+
+<p class="fileinputs">  
+<input class="file" type="file" onchange="preview(this)">
+<button id="targetInput">ファイル選択</button>
+</p>
+
+</div>
+</li>
+<li>
+<h2 class="b_scale">拡大縮小</h2>
+<div>
+<p>
+<button id="btn">＋</button>
+<button id="btn2">−</button>
+</p>
+</div>
+</li>
+<li>
+<h2 class="b_comment">コメント</h2>
+<div>
+<p>
+<input type="checkbox">吹き出し</input>
+<input type="text" id="comstr" style="width:134px;border:1px solid #aaa;padding:3px;-moz-border-radius:3px;margin-bottom:10px;"></input>
+<button id="text">書き込む</button>
+<button id="del_text">消去</button>
+</p>
+</div>
+</li>
+<li>
+<h2 class="b_stamp">スタンプ</h2>
+<div>
+<p>
+<button id="ok">Good</button>
+<button id="sogood">いいね</button>
+<button id="del_stamp">消去</button>
+</p>
+</div>
+</li>
+<li>
+<h2 class="b_frame">フレーム</h2>
+<div>
+<p>
+<button id="frame_01">フレーム1</button>
+<button id="frame_02">フレーム2</button>
+</p>
+</div>
+</li>
+<li>
+<h2 class="b_edit">編集終了</h2>
+<div>
+<button id="post">投稿する</button>
+</div>
+</li>
+</nav>
+<!--
+<div class="accordion">
+<section id="l">
+<h2><a href="#l">写真撮影</a></h2>
+<div>
+<a href="#close"><strong><span>×</span></strong></a>
+<div><form><input type="file" name="file" onchange="preview(this)"></form></div>
+</div>
+</section>	
+<section id="one">
+<h2><a href="#one">拡大縮小</a></h2>
+<div>
+<a href="#close"><strong><span>close</span></strong></a>
+<div>
+<button id="btn2">-</button> <button id="btn">+</button> 
+</div>
+</div>
+</section>
+<section id="two">
+<h2><a href="#two">コメント</a></h2>
+<div>
+<a href="#close"><strong><span>close</span></strong></a>
+<div>
+<input type="text" id="comstr" style="width:134px;border:1px solid #aaa;padding:3px;-moz-border-radius:3px;"></input>
+<button id="text" style="margin-top:5px;-moz-border-radius:3px;">書き込む</button> <button id="del_text">消去</button>
+</div>
+</div>
+</section>
+<section id="three">
+<h2><a href="#three">スタンプ</a></h2>
+<div>
+<a href="#close"><strong><span>close</span></strong></a>
+<div>
+<button id="ok">Good</button> <button id="sogood">いいね</button> <button id="del_stamp">消去</button>
+</div>
+</div>
+</section>
+</div>
+-->
+<div id="canvas_edit">
+<canvas id="canvas" width="560" height="560"></canvas>
+</div>
+</div>
+</body>
+</html>
